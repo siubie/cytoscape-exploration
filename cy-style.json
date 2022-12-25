@@ -1,0 +1,72 @@
+[
+  {
+    "selector": "node",
+    "style": {
+      "background-color": "#666"
+    }
+  },
+  {
+    "selector": "node[type='entity']",
+    "style": {
+      "shape": "square",
+      "content": "data(id)",
+      "width": 140,
+      "text-wrap": "wrap",
+      "text-valign": "center",
+      "text-halign": "center",
+      "background-color": "#CEEDC7",
+      "font-size": 10,
+      "font-family": "Roboto-Light",
+      "text-transform": "uppercase"
+    }
+  },
+  {
+    "selector": "node[type='relasi']",
+    "style": {
+      "shape": "diamond",
+      "content": "data(id)",
+      "width": 100,
+      "text-wrap": "wrap",
+      "text-valign": "center",
+      "text-halign": "center",
+      "text-max-width": 10,
+      "font-size": 10,
+      "background-color": "#86C8BC",
+      "font-family": "Roboto"
+    }
+  },
+  {
+    "selector": "node[type='attribute']",
+    "style": {
+      "shape": "ellipse",
+      "content": "data(id)",
+      "width": 100,
+      "text-wrap": "wrap",
+      "text-valign": "center",
+      "text-halign": "center",
+      "text-max-width": 10,
+      "font-size": 10,
+      "background-color": "#FFD4B2",
+      "font-family": "Roboto"
+    }
+  },
+  {
+    "selector": "edge",
+    "style": {
+      "width": 1,
+      "line-color": "#ccc",
+      "target-arrow-color": "#ccc",
+      "target-arrow-shape": "none",
+      "curve-style": "bezier"
+    }
+  },
+  {
+    "selector": ":selected",
+    "css": {
+      "background-color": "SteelBlue",
+      "line-color": "black",
+      "target-arrow-color": "black",
+      "source-arrow-color": "black"
+    }
+  }
+]

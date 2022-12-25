@@ -42,104 +42,17 @@
     <div id="cy"></div>
     <!-- <script src="nodes.js"></script> -->
     <script>
+      var toJson = function (res) {
+        return res.json();
+      };
       var cy = cytoscape({
         container: document.getElementById("cy"),
         layout: {
           name: "dagre",
         },
         zoom: 0.1,
-        style: [
-          // the stylesheet for the graph
-          {
-            selector: "node",
-            style: {
-              "background-color": "#666",
-              label: "data(id)",
-            },
-          },
-          {
-            selector: 'node[type="entity"]',
-            style: {
-              shape: "square",
-              content: "data(id)",
-              width: 140,
-              "text-wrap": "wrap",
-              "text-valign": "center",
-              "text-halign": "center",
-              "background-color": "#CEEDC7",
-              "font-size": 10,
-              "font-family": "Roboto-Light",
-            },
-          },
-          {
-            selector: 'node[type="relasi"]',
-            style: {
-              shape: "diamond",
-              content: "data(id)",
-              width: 100,
-              "text-wrap": "wrap",
-              "text-valign": "center",
-              "text-halign": "center",
-              "text-max-width": 10,
-              "font-size": 10,
-              "background-color": "#86C8BC",
-              "font-family": "Roboto",
-            },
-          },
-          {
-            selector: 'node[type="attribute"]',
-            style: {
-              shape: "ellipse",
-              content: "data(id)",
-              width: 100,
-              "text-wrap": "wrap",
-              "text-valign": "center",
-              "text-halign": "center",
-              "text-max-width": 10,
-              "font-size": 10,
-              "background-color": "#FFD4B2",
-              "font-family": "Roboto",
-            },
-          },
-          {
-            selector: "edge",
-            style: {
-              width: 1,
-              "line-color": "#ccc",
-              "target-arrow-color": "#ccc",
-              "target-arrow-shape": "triangle",
-              "curve-style": "bezier",
-            },
-          },
-          {
-            selector: ":selected",
-            css: {
-              "background-color": "SteelBlue",
-              "line-color": "black",
-              "target-arrow-color": "black",
-              "source-arrow-color": "black",
-            },
-          },
-        ],
-        elements: {
-          nodes: [
-            { data: { id: "pegawai", type: "entity" } },
-            { data: { id: "tanggungan", type: "entity" } },
-            { data: { id: "nip", type: "attribute" } },
-            { data: { id: "nama", type: "attribute" } },
-            { data: { id: "nama tanggungan", type: "attribute" } },
-            { data: { id: "status", type: "attribute" } },
-            { data: { id: "memiliki", type: "relasi" } },
-          ],
-          edges: [
-            { data: { source: "nip", target: "pegawai" } },
-            { data: { source: "nama", target: "pegawai" } },
-            { data: { source: "nama tanggungan", target: "tanggungan" } },
-            { data: { source: "status", target: "tanggungan" } },
-            { data: { source: "pegawai", target: "memiliki" } },
-            { data: { source: "tanggungan", target: "memiliki" } },
-          ],
-        },
+        style: fetch("cy-style.json").then(toJson),
+        elements: fetch("cy-elements.json").then(toJson),
       });
       // demo your ext
       cy.edgeEditing({
@@ -147,7 +60,7 @@
         bendRemovalSensitivity: 16,
         enableMultipleAnchorRemovalOption: true,
         initAnchorsAutomatically: false,
-        useTrailingDividersAfterContextMenuOptions: false,
+        useTrailingDividersAfterContextMenuOptions: true,
         enableCreateAnchorOnDrag: true,
       });
     </script>

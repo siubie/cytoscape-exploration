@@ -1,0 +1,20 @@
+{
+  "nodes":[
+  { "data": { "id": "pegawai", "type": "entity" } },
+  { "data": { "id": "tanggungan", "type": "entity" } },
+  { "data": { "id": "nip", "type": "attribute" } },
+  { "data": { "id": "nama", "type": "attribute" } },
+  { "data": { "id": "nama tanggungan", "type": "attribute" } },
+  { "data": { "id": "status", "type": "attribute" } },
+  { "data": { "id": "memiliki", "type": "relasi" } }
+],
+"edges":[
+  {"data":{"id":"pegawai-nip","source":"pegawai","target":"nip"}},
+  {"data":{"id":"pegawai-nama","source":"pegawai","target":"nama"}},
+  {"data":{"id":"tanggungan-nama","source":"tanggungan","target":"nama tanggungan"}},
+  {"data":{"id":"tanggungan-status","source":"tanggungan","target":"status"}},
+  {"data":{"id":"pegawai-memiliki","source":"pegawai","target":"memiliki"}},
+  {"data":{"id":"tanggungan-memiliki","source":"tanggungan","target":"memiliki"}}
+]
+
+}
