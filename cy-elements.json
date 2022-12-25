@@ -11,10 +11,10 @@
 "edges":[
   {"data":{"id":"pegawai-nip","source":"pegawai","target":"nip"}},
   {"data":{"id":"pegawai-nama","source":"pegawai","target":"nama"}},
-  {"data":{"id":"tanggungan-nama","source":"tanggungan","target":"nama tanggungan"}},
-  {"data":{"id":"tanggungan-status","source":"tanggungan","target":"status"}},
   {"data":{"id":"pegawai-memiliki","source":"pegawai","target":"memiliki"}},
-  {"data":{"id":"tanggungan-memiliki","source":"tanggungan","target":"memiliki"}}
+  {"data":{"id":"tanggungan-memiliki","source":"tanggungan","target":"memiliki"}},
+  {"data":{"id":"tanggungan-nama","source":"tanggungan","target":"nama tanggungan"}},
+  {"data":{"id":"tanggungan-status","source":"tanggungan","target":"status"}}
 ]
 
 }
